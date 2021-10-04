@@ -19,9 +19,7 @@ const App = () => {
                 setStack(`${stack}${number}`)
             }} />
             <Functions
-                onContentClear = {clear => {
-                    setStack("");
-                }}
+                onContentClear = {clear => setStack("")}
                 onDelete = {(borrar) => {
                     if(stack.length > 0){
                         const newStack = stack.substring(0, stack.length-1);
@@ -30,9 +28,7 @@ const App = () => {
                 }}
             />
             <MathOperations 
-                onClickOperation = {operation => {
-                    setStack(`${stack}${operation}`)
-                }} 
+                onClickOperation = {operation => setStack(`${stack}${operation}`)} 
                 onClickEqual = {equal => {
                     if(stack !== ""){
                         setStack(eval(stack).toString()) 
