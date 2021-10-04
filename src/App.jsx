@@ -46,7 +46,10 @@ const App = () => {
                 }} 
                 onClickEqual = {equal => {
                     console.log(`Presionado:  ${equal}`)
-                    setStack(eval(stack).toString()) 
+                    if(stack !== ""){
+                        setStack(eval(stack).toString()) 
+                    }
+                        
                     //La funcion eval() no es recomandada ya que no hace validaciones de seguridad de lo que se está ejecutando. En este caso es útil, pero no se recomienda su uso
                 }} 
             />
